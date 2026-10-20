@@ -1,0 +1,7 @@
+# Core computer vision and AI dependencies
+opencv-python>=4.10.0
+numpy>=1.26.0
+ultralytics>=8.3.0
+
+# Development and testing tools
+pytest>=8.0.0
