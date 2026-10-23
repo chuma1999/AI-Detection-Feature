@@ -22,11 +22,50 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Project output data
-output/*.json
-output/*.jpg
-output/*.png
+# ==========================================
+# AI / YOLO DATASETS
+# ==========================================
 
-# Keep project folders but ignore generated content
+# Raw datasets
+dataset/raw/
+
+# Hugging Face dataset cache
+dataset/hf_cache/
+
+# Dataset cache / temporary files
+dataset/cache/
+
+# ==========================================
+# YOLO TRAINING OUTPUTS
+# ==========================================
+
+runs/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+
+# Training checkpoints
+checkpoints/
+
+# ==========================================
+# VIDEO FILES
+# ==========================================
+
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ==========================================
+# GENERATED OUTPUT
+# ==========================================
+
+output/*
+outputs/
+logs/
+
+# Keep project folders in Git
 !input/.gitkeep
 !output/.gitkeep
