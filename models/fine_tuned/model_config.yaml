@@ -1,0 +1,52 @@
+model:
+  name: "yolo11n_fine_tuned_v1"
+  model_version: "v1"
+  type: "YOLO11n"
+  base_model: "models/pretrained/yolo11n_original.pt"
+  saved_checkpoint: "models/fine_tuned/best.pt"
+  selection_basis: "Selected because it improved overall held-out project metrics vs the original pretrained checkpoint."
+  selection_reason:
+    - "Precision improved from 0.372 to 0.965"
+    - "Recall improved from 0.515 to 0.809"
+    - "mAP50 improved from 0.376 to 0.886"
+    - "False positives dropped from 30 to 17"
+  dataset:
+    config: "dataset/data.yaml"
+    class_names:
+      - "person"
+      - "car"
+      - "motorcycle"
+      - "bus"
+      - "truck"
+  training:
+    epochs: 25
+    imgsz: 640
+    batch: 2
+    optimizer: "AdamW"
+    device: "cpu"
+    seed: 42
+    base_lr: 0.001
+    warmup_epochs: 3
+    patience: 10
+    augmentation:
+      hsv_h: 0.015
+      hsv_s: 0.7
+      hsv_v: 0.4
+      translate: 0.1
+      scale: 0.5
+      fliplr: 0.5
+      mosaic: 0.0
+      mixup: 0.0
+      copy_paste: 0.0
+  library_versions:
+    python: "3.13.16"
+    ultralytics: "8.4.183"
+    opencv_python: "5.0.0"
+    pyyaml: "6.0.3"
+  date: "2026-10-22"
+  known_limitations:
+    - "Very small evaluation set"
+    - "Limited examples for bus and truck"
+    - "Small or distant objects remain difficult"
+    - "Dark, crowded, and occluded objects still cause misses"
+    - "No Sentinel integration included"

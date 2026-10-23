@@ -1,0 +1,42 @@
+{
+  "dataset_name": "TheMrguiller/coco-object_detection",
+  "split": "train[:200]",
+  "rows_checked": 200,
+  "classes_found": [
+    "airplane",
+    "apple",
+    "backpack",
+    "banana",
+    "banner",
+    "baseball bat",
+    "baseball glove",
+    "bear",
+    "bed",
+    "bench",
+    "bicycle",
+    "bird",
+    "blanket",
+    "boat",
+    "book",
+    "bottle",
+    "bowl",
+    "branch",
+    "bridge",
+    "broccoli"
+  ],
+  "required_classes_present": true,
+  "missing_required_classes": [],
+  "required_class_counts": {
+    "person": 300,
+    "car": 106,
+    "motorcycle": 27,
+    "bus": 4,
+    "truck": 13
+  },
+  "image_path_issues": 200,
+  "dataset_is_training_ready": false,
+  "notes": [
+    "The dataset contains the required classes, but actual image accessibility must be verified before it can be used for YOLO training.",
+    "If the image field points to non-existent local paths, the dataset still needs a proper image-download or conversion step."
+  ]
+}

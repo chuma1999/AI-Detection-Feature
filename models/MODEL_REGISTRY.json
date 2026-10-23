@@ -1,0 +1,10 @@
+{
+  "model_name": "yolo11n.pt",
+  "model_version": "YOLO11n",
+  "model_source": "Ultralytics official pretrained weights",
+  "model_path": "models/pretrained/yolo11n_original.pt",
+  "library_version": "ultralytics==8.4.183",
+  "class_configuration": ["person", "car", "motorcycle", "bus", "truck"],
+  "baseline_usage": "This preserved original checkpoint is the baseline reference. All future fine-tuned models will be trained from this file or a copied variant, and the original weights will never be overwritten.",
+  "preservation_rule": "Do not overwrite the original pretrained checkpoint. Store a clean copy under models/pretrained and keep training outputs under models/fine_tuned."
+}

@@ -1,0 +1,44 @@
+{
+  "model_name": "yolo11n_fine_tuned_v1",
+  "model_version": "v1",
+  "selected_for_project": true,
+  "date": "2026-10-22",
+  "dataset": "dataset/data.yaml",
+  "evaluation_protocol": "Same held-out dataset used for baseline and fine-tuned comparison.",
+  "results": {
+    "precision": 0.965,
+    "recall": 0.809,
+    "mAP50": 0.886,
+    "false_positives": 17,
+    "false_negatives": 5,
+    "per_class_ap": {
+      "person": 0.506,
+      "car": null,
+      "motorcycle": 0.995,
+      "bus": null,
+      "truck": null
+    }
+  },
+  "baseline_comparison": {
+    "original_precision": 0.372,
+    "original_recall": 0.515,
+    "original_mAP50": 0.376,
+    "original_false_positives": 30,
+    "improvement_precision": 0.593,
+    "improvement_recall": 0.294,
+    "improvement_mAP50": 0.51,
+    "improvement_false_positives": -13
+  },
+  "selection_reason": "The fine-tuned model is selected because it improved overall precision, recall, mAP50, and reduced false positives on the same held-out test split compared to the original checkpoint.",
+  "known_limitations": [
+    "This is a very small test set.",
+    "Class-level evidence is weak for bus, truck, and car.",
+    "Small, dark, occluded, and crowded objects remain difficult."
+  ],
+  "library_versions": {
+    "python": "3.13.16",
+    "ultralytics": "8.4.183",
+    "opencv_python": "5.0.0",
+    "pyyaml": "6.0.3"
+  }
+}

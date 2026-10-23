@@ -1,0 +1,59 @@
+# Stage 7 - YOLO11n fine-tuning configuration
+# This file is intentionally conservative because the dataset is small and the current environment is CPU-based.
+
+# Base model to start from
+base_model: "models/pretrained/yolo11n_original.pt"
+
+# Dataset configuration
+# The project data.yaml already contains the YOLO class layout and class names.
+data: "dataset/data.yaml"
+class_names:
+  - "person"
+  - "car"
+  - "motorcycle"
+  - "bus"
+  - "truck"
+num_classes: 5
+
+# Training schedule
+epochs: 25
+imgsz: 640
+batch: 2
+lr0: 0.001
+optimizer: "AdamW"
+weight_decay: 0.0005
+momentum: 0.937
+warmup_epochs: 3
+patience: 10
+
+# Device and reproducibility
+device: "cpu"
+seed: 42
+single_cls: false
+
+# Output directory
+project: "runs/train"
+name: "yolo11n_fine_tuned_v1"
+
+# Conservative augmentation for a small dataset
+# We keep augmentations light so the model does not distort the small training set too much.
+augment:
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  degrees: 0.0
+  translate: 0.1
+  scale: 0.5
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.0
+  fliplr: 0.5
+  mosaic: 0.0
+  mixup: 0.0
+  copy_paste: 0.0
+
+# Training notes
+# - The base model keeps useful general object-detection knowledge.
+# - The small dataset means a low batch size and moderate learning rate reduce instability.
+# - The CPU device keeps training realistic for the current machine.
+# - Early stopping prevents wasting time if validation stops improving.

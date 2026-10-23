@@ -1,0 +1,6 @@
+train: ./images/train_dense_small
+val: ./images/val_dense_small
+test: ./images/test
+
+nc: 5
+names: ['person', 'car', 'motorcycle', 'bus', 'truck']

@@ -1,0 +1,6 @@
+train: ./images/train_balanced
+val: ./images/val
+test: ./images/test
+
+nc: 5
+names: ["person", "car", "motorcycle", "bus", "truck"]

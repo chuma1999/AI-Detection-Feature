@@ -1,0 +1,22 @@
+num_classes: 5
+class_names:
+  - "person"
+  - "car"
+  - "motorcycle"
+  - "bus"
+  - "truck"
+class_map:
+  0: "person"
+  1: "car"
+  2: "motorcycle"
+  3: "bus"
+  4: "truck"
+project_classes:
+  - "person"
+  - "car"
+  - "motorcycle"
+  - "bus"
+  - "truck"
+notes:
+  - "This class set matches the project training and inference configuration."
+  - "The model can be loaded independently using the saved checkpoint and this class map."

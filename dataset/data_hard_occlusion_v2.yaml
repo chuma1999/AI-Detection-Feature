@@ -1,0 +1,6 @@
+train: ./images/train_hard_occlusion_v2
+val: ./images/val_hard_occlusion_v2
+test: ./images/test
+
+nc: 5
+names: ['person', 'car', 'motorcycle', 'bus', 'truck']
